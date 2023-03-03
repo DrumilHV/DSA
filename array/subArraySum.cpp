@@ -77,3 +77,11 @@ int main()
 	return 0;
 }
 // } https://www.geeksforgeeks.org/find-subarray-with-given-sum/
+
+/*
+sample i/p
+5 12
+1 2 3 7 5
+sample o/p 
+1 3
+*/
