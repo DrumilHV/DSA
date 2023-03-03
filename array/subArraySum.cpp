@@ -1,5 +1,13 @@
- #include <vector>
- #include<iostream>
+// Given an unsorted array A of size N that contains only non-negative integers,
+// find a continuous sub-array that adds to a given number S and return
+// the left and right index(1-based indexing) of that subarray.
+// In case of multiple subarrays, return the subarray indexes which come first
+// on moving from left to right.
+// Note:- You have to return an ArrayList consisting of two elements left and right.
+// In case no such subarray exists return an array consisting of element -1.
+
+#include <vector>
+#include<iostream>
 
 using namespace std;
 
@@ -13,6 +21,9 @@ class Solution
     {
          int currentSum = arr[0], start  = 0,i;
          vector<int>res;
+
+         //it starts from 1 and goes till =n because we are using i -1 and sum can be arr[n] so 
+         // start from 1 and go till =n 
          for(i=1;i<=n;i++){
              while(currentSum > s && start< i - 1){
                  currentSum = currentSum - arr[start];
@@ -65,4 +76,4 @@ int main()
     }
 	return 0;
 }
-// } Driver Code Ends
+// } https://www.geeksforgeeks.org/find-subarray-with-given-sum/
