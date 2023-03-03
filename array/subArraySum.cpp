@@ -85,3 +85,19 @@ sample i/p
 sample o/p 
 1 3
 */
+/*
+Sliding Window Technique: The technique can be best understood with the window pane in the bus, 
+considering a window of length n and the pane which is fixed in it of length k. Consider,
+initially the pane is at extreme left i.e.,
+at 0 units from the left. Now,
+co-relate the window with array arr[] of size n and pane with current_sum of size k elements.
+ Now, if we apply force on the window, it moves a unit distance ahead. 
+ The pane will cover the next k consecutive elements. 
+
+Applying the sliding window technique : 
+
+We compute the sum of the first k elements out of n terms using a linear loop and store the sum in variable window_sum.
+Then we will graze linearly over the array till it reaches the end and simultaneously keep track of the maximum sum.
+To get the current sum of a block of k elements just subtract the first element from the previous block and add the last element of the current block.
+The below representation will make it clear how the window slides over the array.
+*/
