@@ -1,3 +1,11 @@
+/*
+Given a sorted array of positive integers.
+Your task is to rearrange the array elements alternatively i.e first element should be max value,
+second should be min value, third should be second max, fourth should be second min and so on.
+Note: Modify the original array itself.
+Do it without using any extra space. You do not have to return anything.
+*/
+
 //{ Driver Code Starts
 // C++ program to rearrange an array in minimum 
 // maximum form 
@@ -15,25 +23,18 @@ class Solution{
     //Function to rearrange  the array elements alternately.
     void rearrange(long long *arr, int n) 
     { 
-    	
-        long long maxArr[n/2 + 1],minArr[n/2 + 2], i,j;
-        for(i=0;i<n/2;i++){
-            minArr[i] = arr[i];
-            
-        }
-        for(j=0;j<n/2+1,i<n;i++,j++){
-            maxArr[j] = arr[i];
-            cout<<j<<" "<<maxArr[j]<<endl;
-        }
-        for(i=0,j=0;i<n/2,j<n/2+1;i+=2,j++){
-            cout<<j<<" "<<i<<" "<< maxArr[n-j -1 ]<<endl;
-            arr[i] = maxArr[n -j -1 ];
-        }
-        for(i=1,j=0;i<n,j<n/2;j++,i+=2){
-            arr[i] = minArr[j];
-        }
-    	 
+    vector<int> temp;
+    int i=0;
+    int j = n-1;
+    while(i<=j){
+        temp.push_back(arr[j--]);
+        temp.push_back(arr[i++]);
     }
+    for(int k=0;k<n;k++){
+        arr[k] = temp[k];
+    }
+    }
+    
 };
 
 //{ Driver Code Starts.
@@ -44,33 +45,42 @@ int main()
     int t;
     
     //testcases
-    // cin >> t;
+    cin >> t;
     
-    // while(t--){
+    while(t--){
         
         //size of array
-        // int n = 6;
-        // cin >> n;
+        int n;
+        cin >> n;
         
-        long long arr[] = {1,2,3,4,5,6};
+        long long arr[n];
         
         //adding elements to the array
-        // for(int i = 0;i<n;i++){
-        //     cin >> arr[i];
-        // }
+        for(int i = 0;i<n;i++){
+            cin >> arr[i];
+        }
         
         Solution ob;
         
         //calling rearrange() function
-        ob.rearrange(arr, 6);
+        ob.rearrange(arr, n);
         
         //printing the elements
-        for (int i = 0; i < 6; i++) 
+        for (int i = 0; i < n; i++) 
 		    cout << arr[i] << " ";
 		
 		cout << endl;
-    // }
+    }
 	return 0; 
 } 
 
-// } Driver Code Ends
+/*
+Input:
+n = 6
+arr[] = {1,2,3,4,5,6}
+Output: 6 1 5 2 4 3
+Explanation: Max element = 6, min = 1, 
+second max = 5, second min = 2, and 
+so on... Modified array is : 6 1 5 2 4 3.
+https://www.geeksforgeeks.org/must-do-coding-questions-for-companies-like-amazon-microsoft-adobe/#arrays
+*/
