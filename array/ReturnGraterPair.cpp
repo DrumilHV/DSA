@@ -130,6 +130,6 @@ we pre-process the Y array and count 0, 1, 2, 3 and 4 in it,
 so that we can handle all exceptions in constant time. 
 The array NoOfY[] is used to store the counts.
 
-https://www.geeksforgeeks.org/find-number-pairs-xy-yx/
+https://www.geeksforgeeks.org/find-number-pairs-xy-yx/ 
 
 */
