@@ -22,7 +22,7 @@ using namespace std;
     int main(){
         vector<vector<int> > matrix;
         int value = 3;
-        matrix.reserve(value*value);
+        // matrix.reserve(value*value);
         int count = 0;
         for(int i=0;i<value;i++){
             for(int j=0;j<value;j++){
