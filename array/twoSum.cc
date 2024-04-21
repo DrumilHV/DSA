@@ -22,6 +22,10 @@ Input: nums = [3,3], target = 6
 Output: [0,1]
 
 */
+#include<bits/stdc++.h>
+using namespace std;
+
+
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
@@ -44,3 +48,15 @@ public:
 
     }
 };
+
+int main (){
+    vector<int> nums = {1,2,3,4,5,6};
+    int k = 3;
+    Solution sol;
+    vector<int> ans = sol.twoSum(nums, k);
+    for(int i =0;i<ans.size();i++){
+        cout<<ans[i]<<" ";
+    }
+    cout<<"\n";
+    return 0;
+}
