@@ -53,6 +53,27 @@ void print(Node* &head){
         temp = temp->next;
     }
 }
+Node * deleteHead(Node * head){
+    if(!head) return nullptr;
+    Node *temp = head;
+    head = head->next;
+    delete temp;
+    return head;    
+}
+Node * deleteTail(Node * head){
+   if(!head || !head->next) return nullptr;
+   Node * temp = head;
+   while(temp->next->next){
+    temp = temp->next;
+   }
+   Node * toDel = temp->next;
+   temp->next = nullptr;
+   delete toDel;
+   return head;
+}
+Node * deleteAtPos(Node * &head, int pos){
+    
+}
 int main(){
     Node* n1 = new Node(10);
     Node * head = n1;
