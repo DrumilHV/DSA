@@ -92,7 +92,7 @@
 #define FAST_IO ios_base::sync_with_stdio(false), cin.tie(nullptr)
 using namespace std;
 
-signed main() {
+int main() {
     FAST_IO;
 
     int n;
