@@ -11,25 +11,25 @@ using namespace std;
 
 void solve(int arr[], int n){
     vector<int> b, c;
-    for(int i =0;i<n;i++){
-        bool flag = true;
-        for(int j = 0;j<n;j++){
-            if(j==i) continue;
-            if(arr[i]%arr[j]==0){
-                flag = false;
-                break;
-            }
-        }
-            if(!flag){
-                b.push_back(arr[i]);
-            }else{
-                c.push_back(arr[i]);
-            }
+    sort(arr, arr+n);
+    int max = arr[n-1];
+    int i = n-1;
+    while(arr[i]==max && i >= 0 ){
+        c.push_back(max);
+        i--;
+    }
+    for(int j = 0;j<=i;j++){
+        b.push_back(arr[j]);
+    }
+    if(b.size()==0|| c.size()==0) {
+        cout<<-1;
+        return;
     }
     cout<<b.size()<<" "<<c.size()<<endl;
     for(int i =0;i<b.size();i++){
         cout<<b[i]<<" ";
     }
+    cout<<endl;
     for(int i =0;i<c.size();i++){
         cout<<c[i]<<" ";
     }
