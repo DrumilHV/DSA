@@ -3,5 +3,4 @@
 .vscode
 input.txt
 output.txt
-*.txt
 .gitignore
