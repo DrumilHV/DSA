@@ -5,6 +5,7 @@ int main()
     int t;
     // freopen("input.txt", "r", stdin);
     // freopen("output.txt", "w", stdout);
+    
     cin >> t;
 
     while (t--)
