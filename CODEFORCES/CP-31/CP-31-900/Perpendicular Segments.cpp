@@ -8,21 +8,18 @@ using namespace std;
 #define pii pair<int, int>
 #define v vector
 void solve() {
-    int n;
-    cin >> n;
-    v<int> arr(n);
-    for (int i = 0; i < n; i++) {
-        cin >> arr[i];
-    }
-    v<int> b(arr.begin(), arr.end());
-    sort(b.begin(), b.end());
+    int X, Y, K;
+    cin >> X >> Y >> K;
+    int M = min(X, Y);
+    cout << "0 0 " << M << " " << M << endl;
+    cout << "0 " << M << " " << M << " 0" << endl;
 }
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+    // freopen("input.txt", "r", stdin);
+    // freopen("output.txt", "w", stdout);
     int t;
     cin >> t;
     while (t--) {

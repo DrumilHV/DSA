@@ -8,23 +8,6 @@ using namespace std;
 #define pii pair<int,int>
 #define v vector
 
-void solve(){
-    long long n;
-    cin>>n;
-    if(n<=3){
-        cout<<1<<endl;
-        return;
-    }
-    int ans = 1;
-    while(n>3){
-        n = n/4;
-        ans *= 2;
-        if(n<4){
-            break;
-        }
-    }
-    cout<<ans<<endl;
-}
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
@@ -34,7 +17,25 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        solve();
+        int n;
+        cin>>n;
+        int a[n];
+        for(int i=0;i<n;i++){
+            cin>>a[i];
+        }
+        
+        int pre[n];
+        pre[0]=a[0];
+        for(int i=1;i<n;i++){
+            pre[i]=pre[i-1]+a[i];
+        }
+        int q;
+        cin>>q;
+        while(q--){
+            int l,r;
+            cin>>l>>r;
+            cout<<pre[r]-(l-1>0 ? pre[l-1]:0)<<"\n";
+        }
     }
     return 0;
 }
